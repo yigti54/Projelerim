@@ -45,6 +45,8 @@ namespace Business.DependencyRepository.Autofac
             builder.RegisterType<AccountManager>().As<IAccountService>();
             builder.RegisterType<EfRoleDal>().As<IRoleDal>().InstancePerLifetimeScope();
             builder.RegisterType<EfUserRoleDal>().As<IUserRoleDal>().InstancePerLifetimeScope();
+            builder.RegisterType<EfTaskDal>().As<ITaskDal>().InstancePerLifetimeScope();
+            builder.RegisterType<TaskManager>().As<ITaskService>().InstancePerLifetimeScope();
 
 
 
