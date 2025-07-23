@@ -1,12 +1,16 @@
-﻿namespace Core.Utilities.Result.Concrete
+﻿using Core.Utilities.Result.Abstract;
+
+namespace Core.Utilities.Result.Concrete
 {
-    internal class ErrorResult : Result
+    public class ErrorResult : Result
     {
-        public ErrorResult() : base(false)
+        // Make this constructor PUBLIC
+        public ErrorResult(string message) : base(false, message)
         {
         }
 
-        public ErrorResult(string message) : base(false, message)
+        // Make this constructor PUBLIC too
+        public ErrorResult() : base(false)
         {
         }
     }

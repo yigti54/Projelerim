@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Entities.Concrete.EntityFramework.Entities;
 using Microsoft.EntityFrameworkCore;
+using Task = Entities.Concrete.EntityFramework.Entities.Task;
 
 namespace Entities.Concrete.EntityFramework.Context;
 
@@ -25,6 +26,7 @@ public partial class ContextDb : DbContext
     public virtual DbSet<UserActivityLog> UserActivityLogs { get; set; }
 
     public virtual DbSet<UserRole> UserRoles { get; set; }
+    public virtual DbSet<Task> Tasks { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

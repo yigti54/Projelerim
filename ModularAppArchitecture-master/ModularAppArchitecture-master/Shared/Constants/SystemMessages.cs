@@ -53,4 +53,7 @@
     public static string FeatureNotAvailable = "Bu özellik şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.";
     public static string UpdateRequired = "Devam edebilmek için uygulamayı güncellemeniz gerekiyor. Lütfen en son sürümü indirin.";
     public static string OperationTimedOut = "İşlem zaman aşımına uğradı. Lütfen tekrar deneyin.";
+
+    public static string ResourceNotFound = "The requested resource was not found.";
+    
 }

@@ -17,5 +17,6 @@
         public ErrorDataResult(string message) : base(default, false, message)
         {
         }
+
     }
 }

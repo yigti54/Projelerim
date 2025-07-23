@@ -30,7 +30,8 @@ namespace Business.DependencyRepository.Autofac
             builder.RegisterType<MiddlewareRepository>().AsSelf().InstancePerLifetimeScope();
 
             #endregion Dapper
-
+            builder.RegisterType<TaskManager>().As<ITaskService>().InstancePerLifetimeScope();
+            builder.RegisterType<EfTaskDal>().As<ITaskDal>().InstancePerLifetimeScope();
             builder.RegisterType<Enigma.Processor>().AsSelf().InstancePerLifetimeScope();
 
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
