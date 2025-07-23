@@ -4,6 +4,7 @@ using Entities.Concrete.EntityFramework.Entities;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System.Text;
+using Task = System.Threading.Tasks.Task;
 
 namespace Infrastructure.Middleware;
 

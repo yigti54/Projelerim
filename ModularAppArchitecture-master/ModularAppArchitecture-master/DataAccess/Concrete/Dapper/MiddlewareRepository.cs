@@ -3,8 +3,6 @@ using Entities.Concrete.EntityFramework.Entities;
 using System.Data;
 using System.Threading.Tasks;
 using System;
-using Task = Entities.Concrete.EntityFramework.Entities.Task;
-
 namespace DataAccess.Concrete.Dapper
 {
 
@@ -17,7 +15,7 @@ namespace DataAccess.Concrete.Dapper
             _connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
 
-        public async Task AddUserActivityLogAsync(UserActivityLog userActivityLog)
+        public async System.Threading.Tasks.Task AddUserActivityLogAsync(UserActivityLog userActivityLog)
         {
             try
             {
