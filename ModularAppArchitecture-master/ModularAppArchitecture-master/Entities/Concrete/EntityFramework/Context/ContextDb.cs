@@ -8,9 +8,7 @@ namespace Entities.Concrete.EntityFramework.Context;
 
 public partial class ContextDb : DbContext
 {
-    public ContextDb()
-    {
-    }
+    
 
     public ContextDb(DbContextOptions<ContextDb> options)
         : base(options)
