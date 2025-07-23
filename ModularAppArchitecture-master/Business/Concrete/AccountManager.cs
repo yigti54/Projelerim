@@ -48,7 +48,7 @@ public class AccountManager : IAccountService
                 return new ErrorDataResult<AccessToken>(data: null, SystemMessages.InvalidCredentials);
             }
 
-            var userRoles = userRoleDal.GetList(x => x.UserGuid == user.Guid).Select(x=> x.Role.RoleName).ToList();
+            var userRoles = userRoleDal.GetList(filter: x => x.UserGuid == user.Guid, includeProperties: u => u.Role).Select(x=> x.Role.RoleName).ToList();
 
             var token = tokenHelper.CreateToken(new TokenUser
             {
