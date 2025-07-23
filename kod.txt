@@ -1,19 +1,47 @@
-using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 using System;
+using System.Security.Cryptography;
+using Enigma; // Enigma projenizi ekleyin
 
-public class Program
+namespace Entities.Concrete.EntityFramework.Context;
+
+public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ContextDb>
 {
-    public static void Main()
+    public ContextDb CreateDbContext(string[] args)
     {
-        // AES-256 için 32 byte'lık (256 bit) bir anahtar oluşturur
-        byte[] key = new byte[32];
-        RandomNumberGenerator.Fill(key);
-        Console.WriteLine("--- appsettings.json içine eklenecek değerler ---");
-        Console.WriteLine($"\"Key\": \"{Convert.ToBase64String(key)}\",");
+        // --- Tasarım Zamanı için Manuel Yapılandırma ---
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+            // appsettings.json dosyasının bulunduğu WebApi projesinin yolunu belirtiyoruz
+            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../WebApi"))
+            .AddJsonFile("appsettings.json")
+            .Build();
 
-        // AES için 16 byte'lık (128 bit) bir IV (Vektör) oluşturur
-        byte[] iv = new byte[16];
-        RandomNumberGenerator.Fill(iv);
-        Console.WriteLine($"\"Vektor\": \"{Convert.ToBase64String(iv)}\"");
+        // Şifrelenmiş connection string'i alıyoruz
+        var encryptedDefaultConnection = configuration.GetConnectionString("DatabaseConnection");
+        
+        // Şifreyi çözmek için gereken Enigma ve KeyCase sınıflarını manuel olarak hazırlıyoruz
+        var aesSettings = configuration.GetSection("AesSettings").Get<AesSettings>();
+        KeyCase.Instance.SetAesKeys(aesSettings.Key, aesSettings.Vektor);
+        Processor processor = new Processor();
+
+        string connectionString;
+        using (Aes aes = Aes.Create())
+        {
+            connectionString = processor.DecryptorSymmetric(encryptedDefaultConnection, aes);
+        }
+        
+        // --- Hem Dapper hem de EF Core için Connection String'i ayarlıyoruz ---
+        
+        // 1. Dapper'ın statik context'ini manuel olarak yapılandırıyoruz
+        DataAccess.Concrete.Dapper.Context.ContextDb.ConfigureWithConnectionString(connectionString);
+
+        // 2. EF Core için DbContextOptions'ı hazırlıyoruz
+        var optionsBuilder = new DbContextOptionsBuilder<ContextDb>();
+        optionsBuilder.UseSqlServer(connectionString);
+
+        return new ContextDb(optionsBuilder.Options);
     }
 }
