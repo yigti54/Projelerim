@@ -13,7 +13,7 @@ public class MiddlewareRepository
         _connection = connection ?? throw new ArgumentNullException(nameof(connection));
     }
 
-    public async Task AddUserActivityLogAsync(UserActivityLog userActivityLog)
+    public async System.Threading.Tasks.Task AddUserActivityLogAsync(UserActivityLog userActivityLog)
     {
         try
         {

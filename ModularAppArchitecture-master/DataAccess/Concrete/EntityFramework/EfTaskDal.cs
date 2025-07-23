@@ -2,6 +2,7 @@ using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Entities.Concrete.EntityFramework.Context;
 using Entities.Concrete.EntityFramework.Entities;
+using Task = Entities.Concrete.EntityFramework.Entities.Task;
 
 namespace DataAccess.Concrete.EntityFramework
 {

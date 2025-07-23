@@ -26,19 +26,19 @@ public class RequestLoggingMiddleware
         this.logErrorRepository = logErrorRepository;
     }
 
-    public async Task InvokeAsync(HttpContext context)
+    public async System.Threading.Tasks.Task InvokeAsync(HttpContext context)
     {
         if (
             !context.Request.Path.Value.EndsWith("/isMaintenanceMode", StringComparison.OrdinalIgnoreCase) &&
             !context.Request.Path.Value.EndsWith("/GetPermsControl", StringComparison.OrdinalIgnoreCase))
         {
-            await Task.Run(() => LogRequestAsync(context));
+            await System.Threading.Tasks.Task.Run(() => LogRequestAsync(context));
         }
 
         await _next(context);
     }
 
-    private async Task LogRequestAsync(HttpContext context)
+    private async System.Threading.Tasks.Task LogRequestAsync(HttpContext context)
     {
         try
         {

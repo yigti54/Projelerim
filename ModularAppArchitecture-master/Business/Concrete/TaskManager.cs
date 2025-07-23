@@ -5,6 +5,7 @@ using DataAccess.Abstract;
 using Entities.Concrete.EntityFramework.Entities;
 using Entities.Dtos;
 using System;
+using Task = Entities.Concrete.EntityFramework.Entities.Task;
 
 namespace Business.Concrete
 {

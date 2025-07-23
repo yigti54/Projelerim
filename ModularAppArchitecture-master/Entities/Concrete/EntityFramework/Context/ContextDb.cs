@@ -25,7 +25,7 @@ public partial class ContextDb : DbContext
     public virtual DbSet<UserActivityLog> UserActivityLogs { get; set; }
 
     public virtual DbSet<UserRole> UserRoles { get; set; }
-    public virtual DbSet<Task> Tasks { get; set; }
+    public virtual DbSet<Entities.Task> Tasks { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
