@@ -125,7 +125,7 @@ public class AccountManager : IAccountService
                 Email = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Roles = userRoleDal.GetList(x => x.UserGuid == user.Guid)
+                Roles = userRoleDal.GetList(filter: x => x.UserGuid == user.Guid, includeProperties: ur => ur.Role)
                    .Select(x => x.Role.RoleName)
                    .ToList()
             });

@@ -18,16 +18,17 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("add")]
-        [AuthorizeRoles("User")] // Sadece "User" rolündeki kullanıcılar erişebilir
+        [AuthorizeRoles("User")] // Yetkilendirmeyi tekrar aktif hale getiriyoruz
         public IActionResult AddTask(AddTaskDto addTaskDto)
         {
-            // Token'dan kullanıcının Guid'ini al
+            // Token'dan kullanıcının Guid'ini alıyoruz
             var userGuidClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
             if (userGuidClaim == null || !Guid.TryParse(userGuidClaim.Value, out var userGuid))
             {
                 return Unauthorized("Kullanıcı kimliği alınamadı.");
             }
 
+            // Orijinal iş mantığımızı çalıştırıyoruz
             var result = _taskService.AddTask(addTaskDto, userGuid);
             if (result.Success)
             {
