@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yigit.kalaycioglu\\source\\repos\\Projelerim\\TaskManager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9C0C9F-B61F-4FBF-8203-E4EFB1595776}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|c:\\users\\yigit.kalaycioglu\\source\\repos\\projelerim\\taskmanager\\taskmanager.dataaccess\\contextdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA9C0C9F-B61F-4FBF-8203-E4EFB1595776}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|solutionrelative:taskmanager.dataaccess\\contextdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{685C1B2C-D50B-486D-9D9A-CFF2D6C1F68D}|TaskManager.Entities\\TaskManager.Entities.csproj|c:\\users\\yigit.kalaycioglu\\source\\repos\\projelerim\\taskmanager\\taskmanager.entities\\concrete\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{685C1B2C-D50B-486D-9D9A-CFF2D6C1F68D}|TaskManager.Entities\\TaskManager.Entities.csproj|solutionrelative:taskmanager.entities\\concrete\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{685C1B2C-D50B-486D-9D9A-CFF2D6C1F68D}|TaskManager.Entities\\TaskManager.Entities.csproj|c:\\users\\yigit.kalaycioglu\\source\\repos\\projelerim\\taskmanager\\taskmanager.entities\\concrete\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{685C1B2C-D50B-486D-9D9A-CFF2D6C1F68D}|TaskManager.Entities\\TaskManager.Entities.csproj|solutionrelative:taskmanager.entities\\concrete\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContextDb.cs",
+              "DocumentMoniker": "C:\\Users\\yigit.kalaycioglu\\source\\repos\\Projelerim\\TaskManager\\TaskManager.DataAccess\\ContextDb.cs",
+              "RelativeDocumentMoniker": "TaskManager.DataAccess\\ContextDb.cs",
+              "ToolTip": "C:\\Users\\yigit.kalaycioglu\\source\\repos\\Projelerim\\TaskManager\\TaskManager.DataAccess\\ContextDb.cs",
+              "RelativeToolTip": "TaskManager.DataAccess\\ContextDb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T12:20:36.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\yigit.kalaycioglu\\source\\repos\\Projelerim\\TaskManager\\TaskManager.Entities\\Concrete\\User.cs",
+              "RelativeDocumentMoniker": "TaskManager.Entities\\Concrete\\User.cs",
+              "ToolTip": "C:\\Users\\yigit.kalaycioglu\\source\\repos\\Projelerim\\TaskManager\\TaskManager.Entities\\Concrete\\User.cs",
+              "RelativeToolTip": "TaskManager.Entities\\Concrete\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T11:52:07.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "C:\\Users\\yigit.kalaycioglu\\source\\repos\\Projelerim\\TaskManager\\TaskManager.Entities\\Concrete\\TaskItem.cs",
+              "RelativeDocumentMoniker": "TaskManager.Entities\\Concrete\\TaskItem.cs",
+              "ToolTip": "C:\\Users\\yigit.kalaycioglu\\source\\repos\\Projelerim\\TaskManager\\TaskManager.Entities\\Concrete\\TaskItem.cs",
+              "RelativeToolTip": "TaskManager.Entities\\Concrete\\TaskItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T11:51:48.356Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
